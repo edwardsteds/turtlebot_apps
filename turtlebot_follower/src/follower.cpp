@@ -207,7 +207,9 @@ private:
 
       if (enabled_)
       {
+      
         geometry_msgs::TwistPtr cmd(new geometry_msgs::Twist());
+        //Only 2 commands are issued to move the robot
         cmd->linear.x = (z - goal_z_) * z_scale_;
         cmd->angular.z = -x * x_scale_;
         cmdpub_.publish(cmd);
